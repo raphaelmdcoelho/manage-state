@@ -80,4 +80,43 @@ describe('AppComponent', () => {
     tick(1000);
     expect(console.log).toHaveBeenCalled();
   }));
+
+  it('should make double as double of count', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    app.increment();
+    app.increment();
+    expect(app.double()).toEqual(4);
+  });
+
+  it('should make binary power have the value of the power of two and the count as the power', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    app.increment();
+    app.increment();
+    app.increment();
+    expect(app.binaryPower()).toEqual(8);
+  });
+
+  it('should reset the count when the reset button is clicked', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    app.increment();
+    app.increment();
+    const compiled = fixture.nativeElement;
+    compiled.querySelector('.reset').click();
+    expect(app.count()).toEqual(0);
+  });
+
+  it('should reset count, double and binary power when the reset button is clicked', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    app.increment();
+    app.increment();
+    const compiled = fixture.nativeElement;
+    compiled.querySelector('.reset').click();
+    expect(app.count()).toEqual(0);
+    expect(app.double()).toEqual(0);
+    expect(app.binaryPower()).toEqual(1);
+  });
 });
