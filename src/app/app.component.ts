@@ -31,6 +31,10 @@ export class AppComponent {
     console.log("Notify effect triggered with count: ", this.count());
      effect(() => console.log(this.count()));
   }
+
+  public logEvent(event: any) {
+    console.log(event);
+  }
   
   get double() {
     return computed(() => this.count() * 2);
