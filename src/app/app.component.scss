@@ -13,3 +13,11 @@ mat-chip-option {
     margin-left: 1em;
     margin-right: 1em;
 }
+
+.colleciton-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-left: 3em;
+}

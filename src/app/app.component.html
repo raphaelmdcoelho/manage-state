@@ -9,3 +9,22 @@
     <mat-chip-option class="double" color="accent" selected>Double: {{double()}}</mat-chip-option>
     <mat-chip-option class="binary-power" color="accent" selected>Binary Power: {{binaryPower()}}</mat-chip-option>
 </section>
+
+<hr/>
+
+<section class="colleciton-container">
+    <span>
+        <strong>Collection exists?</strong>
+        @if (collection) {
+            Yes
+        } @else {
+            No
+        }
+    </span>
+    <span>
+        <strong>Collection:</strong>
+        @for (item of collection; track item) {
+            {{item}}
+        }
+    </span>
+</section>

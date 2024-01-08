@@ -13,6 +13,8 @@ import {MatChipsModule} from '@angular/material/chips';
 })
 export class AppComponent {
 
+  public collection: Array<Number> = [1, 2, 3, 4, 5];
+
   count = signal(0);
   
   constructor() {
